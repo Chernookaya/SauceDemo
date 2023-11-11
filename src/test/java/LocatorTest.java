@@ -2,10 +2,11 @@ import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
 public class LocatorTest extends BaseTest {
+    public static final String BASE_URL = "https://www.saucedemo.com";
 
     @Test
     public void locators() {
-        driver.get("https://www.saucedemo.com/");
+        driver.get(BASE_URL);
         driver.findElement(By.id("login-button"));
         driver.findElement(By.name("login-button"));
         driver.findElement(By.tagName("input"));

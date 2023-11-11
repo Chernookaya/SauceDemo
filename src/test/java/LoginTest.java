@@ -4,10 +4,11 @@ import org.testng.annotations.Test;
 import static org.testng.Assert.assertEquals;
 
 public class LoginTest extends BaseTest {
+    public static final String BASE_URL = "https://www.saucedemo.com";
 
     @Test
     public void successfulLogin() {
-        driver.get("https://www.saucedemo.com/");
+        driver.get(BASE_URL);
         driver.findElement(By.id("user-name")).sendKeys("standard_user");
         driver.findElement(By.id("password")).sendKeys("secret_sauce");
         driver.findElement(By.id("login-button")).click();
@@ -17,7 +18,7 @@ public class LoginTest extends BaseTest {
 
     @Test
     public void emptyFields() {
-        driver.get("https://www.saucedemo.com/");
+        driver.get(BASE_URL);
         driver.findElement(By.id("login-button")).click();
         assertEquals(driver.findElement(By.cssSelector("[data-test='error']")).getText(),
                 "Epic sadface: Username is required");
@@ -25,7 +26,7 @@ public class LoginTest extends BaseTest {
 
     @Test
     public void wrongPassword() {
-        driver.get("https://www.saucedemo.com/");
+        driver.get(BASE_URL);
         driver.findElement(By.id("user-name")).sendKeys("standard_user");
         driver.findElement(By.id("password")).sendKeys("secret_sauc");
         driver.findElement(By.id("login-button")).click();
@@ -35,7 +36,7 @@ public class LoginTest extends BaseTest {
 
     @Test
     public void lockedUser() {
-        driver.get("https://www.saucedemo.com/");
+        driver.get(BASE_URL);
         driver.findElement(By.id("user-name")).sendKeys("locked_out_user");
         driver.findElement(By.id("password")).sendKeys("secret_sauce");
         driver.findElement(By.id("login-button")).click();
