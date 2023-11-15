@@ -27,6 +27,7 @@ public class ProductsPage extends BasePage {
     }
 
     public void openCart() {
+
         driver.findElement(CART_LINK).click();
     }
 }
