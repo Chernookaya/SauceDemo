@@ -1,4 +1,5 @@
 package tests;
+
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
@@ -6,11 +7,11 @@ import static org.testng.Assert.assertEquals;
 
 public class ProductsTest extends BaseTest {
 
-    @Test
+    @Test(description = "Check if any products can buy") //description необходим для красивых отчетов
     public void buyProduct() {
 
         loginPage.open();
-        loginPage.login("standard_user","secret_sauce");
+        loginPage.login("standard_user", "secret_sauce");
         productsPage.addToCart("Sauce Labs Bike Light");
         //productsPage.addToCart("Sauce Labs Bike Light");
         productsPage.openCart();

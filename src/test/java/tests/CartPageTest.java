@@ -6,7 +6,7 @@ import static org.testng.Assert.assertEquals;
 
 public class CartPageTest extends BaseTest {
 
-    @Test
+    @Test(description = "Check if products delete from cart")
     public void deleteProduct() {
         loginPage.open();
         loginPage.login("standard_user", "secret_sauce");
