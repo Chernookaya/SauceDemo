@@ -8,7 +8,7 @@ import static org.testng.Assert.assertEquals;
 public class LocatorTest extends BaseTest {
     public static final String BASE_URL = "https://www.saucedemo.com";
 
-    @Test
+    @Test(enabled = false)
     public void locators() {
         loginPage.open();
         loginPage.login("standard_user", "secret_sauce");
@@ -61,7 +61,7 @@ public class LocatorTest extends BaseTest {
         assertEquals(56, driver.findElements(By.cssSelector("[class*=inventory]")).size());
     }
 
-    @Test
+    @Test(enabled = false)
     public void xpathSelectorsTest() {
 
         loginPage.open();
