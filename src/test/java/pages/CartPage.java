@@ -13,10 +13,7 @@ public class CartPage extends BasePage {
     public CartPage(WebDriver driver) {
         super(driver);
     }
-    /*public void isOpened() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("chekout")));
-    }*/
-
+    
     public void open() {
         driver.get(BASE_URL + "/cart.html");
     }
