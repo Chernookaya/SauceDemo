@@ -32,10 +32,6 @@ public class LoginTest extends BaseTest {
 
     @Test(description = "Negative Login tests",dataProvider = "loginData")
     public void negativeLogin(String user, String password, String expectedError) {
-        /*System.out.println(user);
-        System.out.println(password);
-        System.out.println(expectedError);
-        System.out.println("------------------");*/
         loginPage.open();
         loginPage.login(user, password);
         assertEquals(
