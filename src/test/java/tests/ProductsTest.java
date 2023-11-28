@@ -7,7 +7,7 @@ import static org.testng.Assert.assertEquals;
 
 public class ProductsTest extends BaseTest {
 
-    @Test(description = "Check if any products can be bought") //description необходим для красивых отчетов
+    @Test(description = "Check if any products can be bought") 
     public void buyProduct() {
 
         loginPage.open();
